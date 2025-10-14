@@ -1,0 +1,22 @@
+sudo apt update
+sudo apt install meson libsystemd-dev gcc ninja-build git pkg-config libinput-dev
+
+sudo nano /etc/libinput.conf
+
+#.2 is good stop thinking you need to change it dummy
+scroll-factor-x=0.2
+scroll-factor-y=0.2
+
+
+cd ~
+git clone https://gitlab.com/warningnonpotablewater/libinput-config.git
+cd libinput-config
+meson build
+cd build
+ninja
+sudo ninja install
+
+Reboot
+
+#credit goes to 
+#https://www.reddit.com/r/framework/comments/1jbi9if/touch_pad_scrolling_too_sensitive_on_ubuntu/
