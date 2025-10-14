@@ -1,0 +1,8 @@
+must have internet connection
+possiblly will need to add repo 
+https://packages.debian.org/search?keywords=firmware-misc-nonfree
+
+sudo apt install firmware-misc-nonfree
+
+Otherwise media tek software can be found here:
+<add later>
