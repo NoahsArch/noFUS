@@ -38,8 +38,9 @@ Reference: [morrownr USB-WiFi Repository](https://github.com/morrownr/USB-WiFi/b
 1. Download the firmware from the kernel repository:  
 
 ```bash
-wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/mediatek/WIFI_MT7922_patch_mcu_1_1_hdr.bin -O WIFI_MT7922_patch_mcu_1_1_hdr.bin
-wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/mediatek/WIFI_RAM_CODE_MT7922_1_1.bin -O WIFI_RAM_CODE_MT7922_1_1.bin
+sudo wget https://github.com/NoahsArch/noFUS/raw/main/Debian-Mediatek-MT7922/WIFI_MT7922_patch_mcu_1_1_hdr.bin -O WIFI_MT7922_patch_mcu_1_1_hdr.bin
+sudo wget https://github.com/NoahsArch/noFUS/raw/main/Debian-Mediatek-MT7922/WIFI_RAM_CODE_MT7922_1_1.bin -O WIFI_RAM_CODE_MT7922_1_1.bin
+sudo wget https://github.com/NoahsArch/noFUS/raw/main/Debian-Mediatek-MT7922/BT_RAM_CODE_MT7922_1_1.bin -O BT_RAM_CODE_MT7922_1_1.bin
 ```
 
 2. Create the firmware directory if it doesn’t exist:  
