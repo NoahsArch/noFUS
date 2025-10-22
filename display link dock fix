@@ -1,6 +1,0 @@
-usually running wayland from this github
-  https://github.com/AdnanHodzic/displaylink-debian
-
-git clone https://github.com/AdnanHodzic/displaylink-debian.git
-cd displaylink-debian
-sudo ./displaylink-debian.sh
