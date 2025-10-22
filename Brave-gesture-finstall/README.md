@@ -1,45 +1,100 @@
-[BRAVE_SETUP.md]
-# Brave Browser Setup (Wayland + Gesture Optimization)
-This guide covers installing Brave Browser on Debian-based systems and enabling Wayland support for smooth touchpad gestures and proper overscroll navigation.
+[README_BRAVE.md](https://github.com/user-attachments/files/23057291/README_BRAVE.md)
+# Brave – Wayland & Gesture Setup
 
-## 1. Install Curl (if not already installed)
-Brave’s installer is fetched via Curl. Install it first:
-sudo apt install curl
+This guide installs **Brave Browser** and enables **Wayland** + **touchpad overscroll history navigation** for smooth, native gestures on GNOME.
 
-## 2. Install Brave Browser
-Run the official Brave installation script:
+---
+
+## 🧰 Setup & Dependencies
+
+Install Curl (used by Brave's official installer):
+
+```bash
+sudo apt install -y curl
+```
+
+---
+
+## 🦁 Install Brave (Official Script)
+
+Run Brave’s installer (adds repo, key, and installs Brave Stable):
+
+```bash
 curl -fsS https://dl.brave.com/install.sh | sh
-This will add Brave’s repository, import its signing key, and install the browser.
+```
 
-## 3. Enable Wayland and Touchpad Gestures
-Edit the Brave desktop entry so it launches with Wayland and gesture support enabled:
+After installation, you should have the desktop entry at:
+
+```
+/usr/share/applications/brave-browser.desktop
+```
+
+---
+
+## ⚙️ Enable Wayland & Overscroll Gestures
+
+Edit Brave’s desktop entry to force Wayland and enable back/forward two‑finger swipe:
+
+```bash
 sudo nano /usr/share/applications/brave-browser.desktop
+```
 
-Find the line starting with Exec= and replace it with:
+Replace the `Exec=` line with:
+
+```ini
 Exec=/usr/bin/brave-browser-stable %U --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
-Save the file and exit.
+```
 
-## 4. If Using Flatpak Instead
-If Brave was installed via Flatpak, edit this file instead:
+Save and exit.
+
+> Tip: If you prefer creating a user override instead of editing the system file, copy it first:
+> ```bash
+> cp /usr/share/applications/brave-browser.desktop ~/.local/share/applications/brave-browser.desktop
+> nano ~/.local/share/applications/brave-browser.desktop
+> ```
+
+---
+
+## 📦 If You Installed Brave via Flatpak
+
+Edit the Flatpak desktop entry instead:
+
+```bash
 nano ~/.local/share/applications/com.brave.Browser.desktop
+```
 
-Then replace the Exec= line in the same way:
+Update the `Exec=` line the same way:
+
+```ini
 Exec=/usr/bin/brave-browser-stable %U --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
+```
 
-## 5. Verify Wayland Support
-In Brave, go to:
+> Note: Some Flatpak wrappers use a different `Exec` path (e.g., `flatpak run com.brave.Browser`). Keep that path but append the same flags above.
+
+---
+
+## 🧠 Verify Wayland Rendering
+
+Open Brave flags:
+
+```
 brave://flags
-Set “Preferred Ozone Platform” to either:
-- Wayland — for full Wayland-native rendering, or
-- Auto — lets Brave detect the optimal backend automatically.
-Restart Brave after changing the flag.
+```
 
-## Summary
-- Curl is required to fetch Brave’s installer.
-- The --ozone-platform=wayland flag enables native Wayland support.
-- The --enable-features=TouchpadOverscrollHistoryNavigation flag enables smooth two-finger back/forward navigation.
-- Works best on GNOME Wayland and Framework laptops with precision touchpads.
+Set **Preferred Ozone Platform** to **“Wayland”** (or **“Auto”**). Restart Brave.
 
-Author: Noah Lanning
-Last Updated: October 2025
-License: MIT (optional)
+You can also confirm Wayland at `brave://gpu` (look for **Ozone platform: wayland**).
+
+---
+
+## ✅ Summary
+
+- `curl` installs Brave via its official script.  
+- `--ozone-platform=wayland` forces native Wayland.  
+- `--enable-features=TouchpadOverscrollHistoryNavigation` enables smooth two‑finger back/forward.  
+- Works great on **GNOME Wayland** (e.g., Framework 13).
+
+---
+
+**Author:** Noah Lanning  
+**Last Updated:** Oct 2025
