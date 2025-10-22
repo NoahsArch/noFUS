@@ -26,7 +26,7 @@ Once the connection exists, continue with the steps below.
 Open the VPN configuration file:
 
 ```bash
-sudo nano /etc/NetworkManager/system-connections/Ovpn.nmconnection
+sudo nano /etc/NetworkManager/system-connections/<vpn-name>.nmconnection
 ```
 
 Inside `[vpn]`, ensure this line exists or is changed to:
