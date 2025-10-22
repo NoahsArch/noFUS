@@ -91,9 +91,8 @@ If it connects without prompting, your auto-connect setup is complete ✅
 - `password-flags=0` tells NetworkManager to use the stored password instead of prompting.
 - `autoconnect=true` ensures the VPN automatically activates when your system connects to a matching network or starts up.
 - Works reliably on **Debian 13**, **Kali**, and other pure NetworkManager-based systems (without Netplan or Canonical patches).
-
+- Canonical really fucked me SMH
 ---
 
 **Author:** *Noah Lanning*  
 **Last Updated:** October 2025  
-**License:** MIT (optional)
