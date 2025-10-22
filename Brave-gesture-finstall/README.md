@@ -38,7 +38,7 @@ Edit Brave’s desktop entry to force Wayland and enable back/forward two‑fing
 sudo nano /usr/share/applications/brave-browser.desktop
 ```
 
-Replace the `Exec=` line with:
+Replace the `Exec=` line with: (You can also just comment out the default and add in this)
 
 ```ini
 Exec=/usr/bin/brave-browser-stable %U --ozone-platform=wayland --enable-features=TouchpadOverscrollHistoryNavigation
@@ -85,13 +85,6 @@ Set **Preferred Ozone Platform** to **“Wayland”** (or **“Auto”**). Resta
 You can also confirm Wayland at `brave://gpu` (look for **Ozone platform: wayland**).
 
 ---
-
-## ✅ Summary
-
-- `curl` installs Brave via its official script.  
-- `--ozone-platform=wayland` forces native Wayland.  
-- `--enable-features=TouchpadOverscrollHistoryNavigation` enables smooth two‑finger back/forward.  
-- Works great on **GNOME Wayland** (e.g., Framework 13).
 
 ---
 
