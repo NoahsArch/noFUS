@@ -31,6 +31,9 @@ scroll-factor-y=0.2
 
 ## 🛠️ Build & Install libinput-config
 
+I'm super worried this gets depricated. Its the only fix i've found.
+link: https://gitlab.com/warningnonpotablewater/libinput-config
+
 ```bash
 cd ~
 git clone https://gitlab.com/warningnonpotablewater/libinput-config.git
