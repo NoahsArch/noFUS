@@ -47,6 +47,7 @@ sudo wget https://github.com/NoahsArch/noFUS/raw/main/Debian-Mediatek-MT7922/BT_
 
 ```bash
 sudo mkdir -p /lib/firmware/mediatek
+sudo mkdir -p /lib/firmware/mediatek
 ```
 
 3. Copy the downloaded files into it:  
@@ -54,6 +55,7 @@ sudo mkdir -p /lib/firmware/mediatek
 ```bash
 sudo cp WIFI_MT7922_patch_mcu_1_1_hdr.bin /lib/firmware/mediatek/
 sudo cp WIFI_RAM_CODE_MT7922_1_1.bin /lib/firmware/mediatek/
+sudo cp BT_RAM_CODE_MT7922_1_1.bin /lib/firmware/mediatek/
 ```
 
 4. Reboot your system:  
