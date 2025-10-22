@@ -1,3 +1,4 @@
+[BRAVE_SETUP.md]
 # Brave Browser Setup (Wayland + Gesture Optimization)
 This guide covers installing Brave Browser on Debian-based systems and enabling Wayland support for smooth touchpad gestures and proper overscroll navigation.
 
