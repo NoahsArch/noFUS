@@ -1,4 +1,3 @@
-[README_BRAVE.md](https://github.com/user-attachments/files/23057291/README_BRAVE.md)
 # Brave – Wayland & Gesture Setup
 
 This guide installs **Brave Browser** and enables **Wayland** + **touchpad overscroll history navigation** for smooth, native gestures on GNOME.
