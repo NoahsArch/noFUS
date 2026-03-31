@@ -39,6 +39,39 @@ This script automatically downloads the latest DisplayLink driver, compiles requ
 systemctl status displaylink-driver
 ```
 
+
+## 🔧 Fix: Displays Not Showing After Kernel Update
+
+If your monitors stop appearing after a system update, the **evdi DKMS module likely needs to be rebuilt** for the new kernel.
+
+Run the following recovery commands:
+
+```bash
+sudo apt update
+sudo apt install dkms build-essential linux-headers-$(uname -r)
+sudo dkms autoinstall
+sudo modprobe evdi
+sudo systemctl restart displaylink-driver.service
+```
+
+Verify the service is running:
+
+```bash
+systemctl status displaylink-driver.service
+```
+
+You should see:
+
+```
+Active: active (running)
+```
+
+To prevent this issue in the future, install the kernel headers meta package:
+
+```bash
+sudo apt install linux-headers-amd64
+```
+
 ---
 
 **Author:** Noah Lanning  
